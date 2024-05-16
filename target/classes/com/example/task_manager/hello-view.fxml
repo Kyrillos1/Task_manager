@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="MainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="711.0" prefWidth="856.0" style="-fx-background-color: 9d9d9e;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.task_manager.HelloController">
+   <children>
+      <Label alignment="CENTER" layoutX="21.0" layoutY="14.0" prefHeight="40.0" prefWidth="265.0" text="Task Manager" textAlignment="CENTER" textFill="#0e93b1" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="System Bold Italic" size="35.0" />
+         </font>
+      </Label>
+      <TableView fx:id="taskTable" layoutX="23.0" layoutY="93.0" prefHeight="407.0" prefWidth="838.0">
+         <columns>
+            <TableColumn fx:id="checkBoxColumn" prefWidth="30.0" text="">
+               <cellValueFactory>
+                  <PropertyValueFactory property="selected" />
+               </cellValueFactory>
+               <cellValueFactory>
+                  <PropertyValueFactory property="selected" />
+               </cellValueFactory>
+
+            </TableColumn>
+            <TableColumn fx:id="titleColumn" prefWidth="124.00002479553223" text="Title">
+               <cellValueFactory>
+                  <PropertyValueFactory property="title" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="descriptionColumn" prefWidth="167.20004272460938" text="Description">
+               <cellValueFactory>
+                  <PropertyValueFactory property="description" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="priorityColumn" prefWidth="96.79998779296875" text="Priority">
+               <cellValueFactory>
+                  <PropertyValueFactory property="priority" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="statusColumn" prefWidth="97.60003662109375" text="Status">
+               <cellValueFactory>
+                  <PropertyValueFactory property="status" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="deadlineColumn" prefWidth="103.20001220703125" text="Deadline">
+               <cellValueFactory>
+                  <PropertyValueFactory property="deadline" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="assigneecolumn" prefWidth="108.79998779296875" text="Assignee">
+               <cellValueFactory>
+                  <PropertyValueFactory property="assignee" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="notescolumn" prefWidth="109.60009765625" text="Notes">
+               <cellValueFactory>
+                  <PropertyValueFactory property="notes" />
+               </cellValueFactory>
+            </TableColumn>
+         </columns>
+      </TableView>
+      <Button fx:id="addTaskButton" layoutX="14.0" layoutY="562.0" mnemonicParsing="false" onAction="#addButtonAction" prefHeight="40.0" prefWidth="138.0" style="-fx-background-color: #682bd7;" text="Add" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="editTaskButton" layoutX="170.0" layoutY="562.0" mnemonicParsing="false" onAction="#editButtonAction" prefHeight="40.0" prefWidth="125.0" style="-fx-background-color: #682bd7;" text="Edit" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="clearAllButton" layoutX="696.0" layoutY="542.0" mnemonicParsing="false" onAction="#clearAllButtonAction" prefHeight="40.0" prefWidth="125.0" style="-fx-background-color: #d0c1ef;" text="Clear All">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="deleteTaskButton" layoutX="314.0" layoutY="562.0" mnemonicParsing="false" onAction="#onDeleteButtonClick" prefHeight="40.0" prefWidth="125.0" style="-fx-background-color: #682bd7;" text="Delete " textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="ChangeStatus" layoutX="14.0" layoutY="624.0" onAction="#onChangeStatusClick" prefHeight="40.0" prefWidth="138.0" style="-fx-background-color: #682bd7;" />
+      <Button fx:id="DarkMode" layoutX="696.0" layoutY="591.0" mnemonicParsing="false" onAction="#onDarkModeButtonClick" prefHeight="40.0" prefWidth="125.0" style="-fx-background-color: #d0c1ef;" text="Dark Mode">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="LightMode" layoutX="696.0" layoutY="644.0" mnemonicParsing="false" onAction="#onLightModeButtonClick" prefHeight="40.0" prefWidth="125.0" style="-fx-background-color: #d0c1ef;" text="Light Mode">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="170.0" layoutY="624.0" mnemonicParsing="false" onAction="#onAddNotesButtonClick" prefHeight="40.0" prefWidth="125.0" style="-fx-background-color: #682bd7;" text="Add Notes" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="addnotes" layoutX="314.0" layoutY="632.0" promptText="Notes.." />
+      <Label fx:id="StatusLabell" layoutX="19.0" layoutY="624.0" prefHeight="40.0" prefWidth="112.0" style="-fx-background-color: #682bd7;" text="Update Status" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="460.0" layoutY="562.0" mnemonicParsing="false" onAction="#sortButtonAction" prefHeight="40.0" prefWidth="125.0" style="-fx-background-color: #682bd7;" text="Sort" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+
+      <ComboBox fx:id="Show" layoutX="460.0" layoutY="624.0" onAction="#onShowButtonAction" prefHeight="40.0" prefWidth="138.0" style="-fx-background-color: #682bd7;" />
+      <Label fx:id="ShowLabell" layoutX="465.0" layoutY="624.0" prefHeight="40.0" prefWidth="102.0" style="-fx-background-color: #682bd7;" text="      Show" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
