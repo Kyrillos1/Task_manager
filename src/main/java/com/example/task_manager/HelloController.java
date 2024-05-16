@@ -294,12 +294,18 @@ public class HelloController {
 
     @FXML
     void onChangeStatusClick(ActionEvent event) {
+//        int selectedIndex = taskTable.getSelectionModel().getSelectedIndex();
+//        taskTable.getItems().set(selectedIndex, newTask);
         Task selectedTask = taskTable.getSelectionModel().getSelectedItem();
         int taskIndex = taskTable.getSelectionModel().getSelectedIndex();
         if (selectedTask != null && ChangeStatus.getValue() != null) {
             Task.Status status = ChangeStatus.getValue();
             selectedTask.setStatus(status);
             taskTable.getItems().set(taskIndex, selectedTask);
+
+//            taskTable.setItems(FXCollections.observableArrayList(tasks));
+
+//            taskTable.getItems().set(taskIndex, selectedTask);
         } else if (selectedTask == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
